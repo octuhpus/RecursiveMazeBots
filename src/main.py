@@ -11,7 +11,7 @@ sys.setrecursionlimit(8000)
 def main():
 
     # Uses (y, x) format. Use y = 4 for blank example
-    myMaze = Backtracking(200, 200)     # both params must be > 4
+    myMaze = Backtracking(25, 25)     # both params must be > 4
 
     mazeController = Controller(myMaze.maze, myMaze.width, myMaze.height)
 

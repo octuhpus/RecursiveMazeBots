@@ -21,6 +21,17 @@ class Controller:
         cv2.namedWindow('Maze', cv2.WINDOW_NORMAL)
         cv2.resizeWindow("Maze", 500, 500)
 
+        goal = False
+
+        while not goal:
+            randx = random.randint(2, self.height - 2)
+            randy = random.randint(2, self.width - 2)
+            if self.maze[randy, randx] == 0:
+                continue
+            else:
+                self.maze[randy, randx] = .2
+                goal = True
+
         bots = [MazeBot(maze, 2, 2) for _ in range(NUM_BOTS)]
 
         while not self.isDone:
@@ -29,6 +40,11 @@ class Controller:
 
             for bot in bots:
                 bot.determineFitness(self.maze)
+
+                if self.maze[bot.ly, bot.lx] == .2:
+                    self.maze[bot.ly, bot.lx] == 0
+                    self.isDone
+                    break
 
                 if bot.fitness == 0 and bot not in self.deadSet:
                     self.deadSet.append(bot)
