@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e5a7b3e-7448-40c4-81b7-b971843eeb72" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/MultiRobotExploration/src/Controller.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MultiRobotExploration/src/Enums.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MultiRobotExploration/src/MazeBot.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MultiRobotExploration/src/RecursiveBacktrackingMaze.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MultiRobotExploration/src/main.py" beforeDir="false" />
-    </list>
+    <list default="true" id="6e5a7b3e-7448-40c4-81b7-b971843eeb72" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

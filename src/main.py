@@ -1,5 +1,6 @@
 import sys
 import cv2
+import numpy as np
 
 from src.Controller import Controller
 from src.RecursiveBacktrackingMaze import Backtracking
@@ -13,6 +14,11 @@ def main():
     myMaze = Backtracking(25, 25)     # both params must be > 4
 
     mazeController = Controller(myMaze.maze, myMaze.width, myMaze.height)
+
+""" these two blocks are for the blank testing
+    maze = np.ones((50, 50), dtype=float)
+    mazeController = Controller(maze, 50, 50)
+"""
 """
     # maze example
     exampleMaze = Backtracking(50, 50)

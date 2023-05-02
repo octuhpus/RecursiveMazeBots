@@ -50,6 +50,7 @@ class Controller:
                     self.unexplored.remove(self.unexplored[0])
                     self.unexplored.remove(self.unexplored[0])
                     if bot.fitness > 1:
+                        print("HERE")
                         self.unexplored.append(bot.lx)  # unexplored[0]
                         self.unexplored.append(bot.ly)  # unexplored[1]
                 else:
@@ -72,7 +73,7 @@ class Controller:
     def displayImage(self):
         cv2.imshow('Maze', self.maze)
         cv2.waitKey(1)
-        time.sleep(0.1)
+        time.sleep(0.0)
 
 
 def reorder_bots(bots):
