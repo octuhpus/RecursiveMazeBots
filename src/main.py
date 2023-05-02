@@ -15,6 +15,9 @@ def main():
 
     mazeController = Controller(myMaze.maze, myMaze.width, myMaze.height)
 
+# also for testing you can make any numpy array and input 0s in any location
+# to provide non-automatic testing (no maze)
+
 """ these two blocks are for the blank testing
     maze = np.ones((50, 50), dtype=float)
     mazeController = Controller(maze, 50, 50)
