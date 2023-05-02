@@ -24,12 +24,12 @@ class Controller:
         goal = False
 
         while not goal:
-            randx = random.randint(2, self.height - 2)
-            randy = random.randint(2, self.width - 2)
-            if self.maze[randy, randx] == 0:
+            self.randx = random.randint(2, self.height - 2)
+            self.randy = random.randint(2, self.width - 2)
+            if self.maze[self.randy, self.randx] == 0:
                 continue
             else:
-                self.maze[randy, randx] = .2
+                self.maze[self.randy, self.randx] = .2
                 goal = True
 
         bots = [MazeBot(maze, 2, 2) for _ in range(NUM_BOTS)]
@@ -44,7 +44,10 @@ class Controller:
                 if self.maze[bot.ly, bot.lx] == .2:
                     self.maze[bot.ly, bot.lx] == 0
                     self.isDone
-                    break
+                    print("Done!")
+                    cv2.waitKey(0)
+                    cv2.destroyAllWindows()
+                    return
 
                 if bot.fitness == 0 and bot not in self.deadSet:
                     self.deadSet.append(bot)
@@ -58,7 +61,21 @@ class Controller:
                 # print(bot.fitness)
 
                 if len(bot.openDir) > 0:
-                    moveBot(random.choice(list(bot.openDir)), bot)
+                    if bot.ly < self.randy and ens.Direction.DOWN in bot.openDir:
+                        bot.moveDown()
+                        print("D")
+                    elif bot.ly > self.randy and ens.Direction.UP in bot.openDir:
+                        bot.moveUp()
+                        print("U")
+                    elif bot.lx < self.randx and ens.Direction.RIGHT in bot.openDir:
+                        bot.moveRight()
+                        print("R")
+                    elif bot.lx > self.randx and ens.Direction.LEFT in bot.openDir:
+                        bot.moveLeft()
+                        print("L")
+                    else:
+                        moveBot(random.choice(list(bot.openDir)), bot)
+                        # print("R")
                 elif len(bot.openDir) == 0 and len(self.unexplored) > 0:
                     self.maze[bot.ly, bot.lx] = .5
                     bot.tele(self.unexplored[0], self.unexplored[1])

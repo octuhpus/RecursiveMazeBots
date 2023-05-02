@@ -13,25 +13,25 @@ class MazeBot:
     # removes directions that are no longer open
     def determineFitness(self, maze):
 
-        if maze[self.ly - 1, self.lx] == 1:    # up == 1
+        if maze[self.ly - 1, self.lx] == 1 or maze[self.ly - 1, self.lx] == .2:    # up == 1
             self.fitness += 1
             self.openDir.add(Direction.UP)
         elif Direction.UP in self.openDir:
             self.openDir.remove(Direction.UP)
 
-        if maze[self.ly + 1, self.lx] == 1:    # down == 2
+        if maze[self.ly + 1, self.lx] == 1 or maze[self.ly + 1, self.lx] == .2:    # down == 2
             self.fitness += 1
             self.openDir.add(Direction.DOWN)
         elif Direction.DOWN in self.openDir:
             self.openDir.remove(Direction.DOWN)
 
-        if maze[self.ly, self.lx - 1] == 1:    # left == 3
+        if maze[self.ly, self.lx - 1] == 1 or maze[self.ly, self.lx - 1] == .2:    # left == 3
             self.fitness += 1
             self.openDir.add(Direction.LEFT)
         elif Direction.LEFT in self.openDir:
             self.openDir.remove(Direction.LEFT)
 
-        if maze[self.ly, self.lx + 1] == 1:    # right == 4
+        if maze[self.ly, self.lx + 1] == 1 or maze[self.ly, self.lx + 1] == .2:    # right == 4
             self.fitness += 1
             self.openDir.add(Direction.RIGHT)
         elif Direction.RIGHT in self.openDir:
